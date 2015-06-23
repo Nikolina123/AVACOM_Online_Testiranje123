@@ -1,0 +1,193 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@using AVACOM_Online_Testiranje.Areas.Admin.Models
+@model AVACOM_Online_Testiranje.Areas.Admin.Models.PitanjePrikaziVM
+
+
+
+
+@*<div class="row">
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-comments fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                       
+
+                        @foreach (PitanjePrikaziVM.PitanjeInfo x in Model.Pitanja)
+                        { 
+                            @x.Id
+                        }
+
+                      @for (int i = 0; i < Model.Pitanja.Count; i++)
+                      {
+                          @Model.Pitanja[i].Id;
+                      }
+                        <div>Broj pitanja</div>
+                    </div>
+                </div>
+            </div>
+            <a href="#">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>*@
+<script src="~/Scripts/mojjs.js"></script>
+
+<h3 class="text-primary text-center">
+    Morris js charts
+</h3>
+<div class="row">
+    <div class="col-sm-6 text-center">
+        <label class="label label-success">Area Chart</label>
+        <div id="area-chart"></div>
+    </div>
+    <div class="col-sm-6 text-center">
+        <label class="label label-success">Line Chart</label>
+        <div id="line-chart"></div>
+    </div>
+    <div class="col-sm-6 text-center">
+        <label class="label label-success">Bar Chart</label>
+        <div id="bar-chart"></div>
+    </div>
+    <div class="col-sm-6 text-center">
+        <label class="label label-success">Bar stacked</label>
+        <div id="stacked"></div>
+    </div>
+    <div class="col-sm-6 col-sm-offset-3 text-center">
+        <label class="label label-success">Pie Chart</label>
+        <div id="pie-chart"></div>
+    </div>
+
+</div>
+
+
+
+
+   
+
+
+
+
+
+    @*<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+        <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+        <script type="text/javascript">
+            google.load('visualization', '1', { packages: ['corechart'] });
+        </script>
+        <script type="text/javascript">
+            $(function () {
+                $.ajax({
+                    type: 'POST',
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    url: 'Home/GetChartData',
+                    data: '{}',
+                    success:
+                    function (response) {
+                        drawchart(response.d);
+                    },
+
+                    error: function () {
+                        alert("Error loading data!");
+                    }
+                });
+            })
+            function drawchart(dataValues) {
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Column Name');
+                data.addColumn('number', 'Column Value');
+                for (var i = 0; i < dataValues.length; i++) {
+                    data.addRow([dataValues[i].Naziv, dataValues[i].Id]);
+                }
+                new google.visualization.PieChart(document.getElementById('myChartDiv')).
+                draw(data, { title: "Google Chart in Asp.net using jQuery" });
+            }
+        </script>
+
+
+
+        <div id="myChartDiv" style="width: 700px; height: 450px;">
+        </div>*@
+
+
+
+
+
+
+
+
+
+    @*<script src="~/Scripts/jquery-1.7.1.js"></script>
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+        <script>
+            var chartData; // globar variable for hold chart data
+            google.load("visualization", "1", { packages: ["corechart"] });
+
+            // Here We will fill chartData
+
+            $(document).ready(function () {
+
+                $.ajax({
+                    url: "Home/GetChartData",
+                    data: "",
+                    dataType: "json",
+                    type: "POST",
+                    contentType: "application/json; chartset=utf-8",
+                    success: function (data) {
+                        chartData = data.d;
+                    },
+                    error: function () {
+                        alert("Error loading data! Please try again.");
+                    }
+                }).done(function () {
+                    // after complete loading data
+                    google.setOnLoadCallback(drawChart);
+                    drawChart();
+                });
+            });
+
+
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable(chartData);
+
+                var options = {
+                    title: "Company Revenue",
+                    pointSize: 5
+                };
+
+                var barChart = new google.visualization.BarChart(document.getElementById('chart_div'));
+                barChart.draw(data, options);
+
+            }
+
+        </script>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @*<div id="chart_div" style="width:500px;height:400px">
+            <%-- Here Chart Will Load --%>
+        </div>*@

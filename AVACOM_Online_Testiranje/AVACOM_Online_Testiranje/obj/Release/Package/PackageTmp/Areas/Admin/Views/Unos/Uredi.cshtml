@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Uredi";
+}
+
+@model AVACOM_Online_Testiranje.Areas.Admin.Models.PitanjeEditVM
+
+
+
+
+@using (Html.BeginForm("Snimi", "Unos"))
+{
+    @Html.HiddenFor(model => model.Id)
+
+     <div class="form-group">
+    <label>Tekst</label>
+     @Html.TextBoxFor(model => model.Tekst, new {@class = "form-control"})
+    @Html.ValidationMessageFor(model => model.Tekst)
+    </div>
+
+                                    <div class="form-group">
+                                        <label>Bod</label>
+                                        @Html.TextBoxFor(model => model.Bod, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Bod)
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Oblast</label>
+                                        @Html.DropDownListFor(model => model.OblastId,Model.OblastiStavke ,new {@class = "form-control"})
+                                        @Html.ValidationMessageFor(model => model.OblastId)
+                                    </div>
+
+                                    
+                                        <div class="form-group">
+                                            <label>Vrsta pitanja</label>
+                                            @Html.TextBoxFor(model => model.VrstaPitanjaId, new {@class = "form-control"})
+                                            @Html.ValidationMessageFor(model => model.VrstaPitanjaId)
+                                                 </div>
+
+                                    <div>
+                                        @Html.ValidationSummary()
+                                    </div>
+                                    <input type="submit" value="Snimi" class="btn btn-default" />
+
+}
